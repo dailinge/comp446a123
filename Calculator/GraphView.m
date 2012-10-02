@@ -97,6 +97,7 @@
     self.contentMode = UIViewContentModeRedraw;
 }
 
+/* In both awakeFromNib and initWithFrame, the same set of initializations needs to be done */
 - (void)awakeFromNib
 {
     [self setup];
@@ -104,6 +105,7 @@
     [self.dataSource updateDescription];
 }
 
+/* It is not called for a UIView coming out of a storyboard */
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];

@@ -11,17 +11,29 @@
 
 @interface GraphViewController () <GraphViewDataSource>
 @property (nonatomic, weak) IBOutlet GraphView *graphView;
+@property (weak, nonatomic) IBOutlet UIToolbar *toolBar;
 
 @end
 
 @implementation GraphViewController
 
 @synthesize graphView = _graphView;
+@synthesize splitViewBarButtonItem = _splitViewBarButtonItem;
 
 /* The model of the graph MVC */
-@synthesize programDisplay = _programDisplay;
+@synthesize toolBar = _toolBar;
 @synthesize graphBrain =_graphBrain;
 
+- (void)setSplitViewBarButtonItem:(UIBarButtonItem *)splitViewBarButtonItem
+{
+    if (_splitViewBarButtonItem != splitViewBarButtonItem) {
+        NSMutableArray *toolbarItems = [self.toolBar.items mutableCopy];
+        if (_splitViewBarButtonItem) [toolbarItems removeObject:_splitViewBarButtonItem];
+        if (splitViewBarButtonItem) [toolbarItems insertObject:splitViewBarButtonItem atIndex:0];
+        self.toolBar.items = toolbarItems;
+        _splitViewBarButtonItem = splitViewBarButtonItem;
+    }
+}
 /* Setter of the view. It initializes the gesture handlers */
 - (void)setGraphView:(GraphView *)graphView
 {
@@ -64,7 +76,8 @@
 
 - (void)updateDescription
 {
-    self.programDisplay.text = [CalculatorBrain descriptionOfFirstProgram:self.graphBrain.program];
+    self.navigationItem.title = [CalculatorBrain descriptionOfFirstProgram:self.graphBrain.program];
+
 }
 
 
@@ -74,7 +87,7 @@
 }
 
 - (void)viewDidUnload {
-    [self setProgramDisplay:nil];
+    [self setToolBar:nil];
     [super viewDidUnload];
 }
 @end

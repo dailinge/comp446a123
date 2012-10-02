@@ -8,8 +8,8 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #import "CalculatorBrain.h"
+#import "SplitViewBarButtonPresenter.h"
 
-@interface GraphViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UILabel *programDisplay;
+@interface GraphViewController : UIViewController <SplitViewBarButtonPresenter>
 @property (nonatomic) CalculatorBrain *graphBrain;
 @end

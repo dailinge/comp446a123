@@ -412,17 +412,10 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="ndb-vk-KGH" customClass="GraphView">
-                                <rect key="frame" x="0.0" y="29" width="320" height="387"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="odi-Ci-4vk">
-                                <rect key="frame" x="0.0" y="0.0" width="300" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -431,7 +424,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="graphView" destination="ndb-vk-KGH" id="aCh-QD-GbG"/>
-                        <outlet property="programDisplay" destination="odi-Ci-4vk" id="y6P-1K-onq"/>
                     </connections>
                 </viewController>
             </objects>
